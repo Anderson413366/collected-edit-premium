@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Collected Edit</title>
+  <meta name="description" content="A local collection of elegant finds curated by Trina Gomes for Western Massachusetts and Northern Connecticut." />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container header-bar">
+        <a class="brand" href="#top" aria-label="The Collected Edit home">
+          <img src="assets/logo.svg" alt="The Collected Edit logo" class="brand-logo" />
+        </a>
+        <nav class="main-nav" aria-label="Primary">
+          <a href="#collection">Collection</a>
+          <a href="#philosophy">Philosophy</a>
+          <a href="#how">How it works</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero-section">
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <p class="kicker">Curated by Trina Gomes</p>
+            <h1>Beautiful things deserve<br>another room.</h1>
+            <p class="hero-text" id="heroText">A local collection of elegant finds for women who want a home that feels collected, warm, and quietly refined.</p>
+            <div class="hero-actions">
+              <a href="#collection" class="button button-dark">Browse the collection</a>
+              <button class="button button-light" id="heroMessenger" type="button">Message on Facebook</button>
+            </div>
+            <div class="hero-aside">
+              <div>
+                <span class="aside-label">Area served</span>
+                <strong id="serviceAreaText">Western Massachusetts & Northern Connecticut</strong>
+              </div>
+              <div>
+                <span class="aside-label">Shopping style</span>
+                <strong>Local, simple, and personal</strong>
+              </div>
+              <div>
+                <span class="aside-label">Quietly sustainable</span>
+                <strong>Thoughtful pieces stay in circulation</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-art-panel">
+            <div class="hero-frame">
+              <img src="assets/hero-stilllife.svg" alt="Curated still life representing the collection" />
+            </div>
+            <div class="hero-note-card">
+              <p class="note-overline">The collection</p>
+              <p class="note-text">Not a stream of random listings. A carefully edited mix of home, entertaining, travel, seasonal, and beautifully useful finds.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stateline">
+        <div class="container stateline-grid">
+          <article>
+            <p class="stateline-title">Taste first</p>
+            <p>Every piece is chosen for finish, shape, usefulness, and the way it will live in a real home.</p>
+          </article>
+          <article>
+            <p class="stateline-title">Local by design</p>
+            <p>Buyers message Trina directly on Facebook Messenger and handle pickup or delivery the easy way.</p>
+          </article>
+          <article>
+            <p class="stateline-title">Waste, quietly reduced</p>
+            <p>Many finds could have ended up in a landfill. Here, they look like what they are: worth keeping.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="collection">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="kicker">Current collection</p>
+              <h2>Collected with taste, ready for a next home.</h2>
+            </div>
+            <div class="section-tools">
+              <label class="search-field">
+                <span class="sr-only">Search listings</span>
+                <input id="searchInput" type="search" placeholder="Search the collection" />
+              </label>
+            </div>
+          </div>
+
+          <div id="filterBar" class="filter-bar" aria-label="Collection filters"></div>
+          <div id="productGrid" class="product-grid"></div>
+          <div id="archiveWrap" class="archive-wrap hidden">
+            <button id="toggleArchive" class="button button-light" type="button">Show sold archive</button>
+            <div id="archiveGrid" class="archive-grid hidden"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="philosophy">
+        <div class="container philosophy-layout">
+          <div class="philosophy-quote">
+            <p class="quote-mark">“</p>
+            <h2>The point is not secondhand. The point is well chosen.</h2>
+          </div>
+          <div class="philosophy-copy">
+            <p id="brandStoryText">The Collected Edit is built around discernment. Trina has an eye for pieces that still feel polished, useful, and worth bringing home.</p>
+            <p>The sustainability side matters, but it stays in the right place. Buyers come for beauty, quality, and ease. The reduction in waste is part of the intelligence behind the collection, not a lecture attached to it.</p>
+            <p id="recycleStoryText">That instinct also connects naturally to The Recycle Company, Trina’s broader work in recycling and reuse. Here, that mission shows up in its most elegant form: keeping good things in circulation.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="how">
+        <div class="container">
+          <div class="section-heading narrow">
+            <div>
+              <p class="kicker">How it works</p>
+              <h2>A simpler way to shop local finds.</h2>
+            </div>
+          </div>
+          <div class="steps-grid">
+            <article class="step-card">
+              <span class="step-number">01</span>
+              <h3>Browse the collection</h3>
+              <p>Open any listing to see photos, price, condition, and details.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-number">02</span>
+              <h3>Message Trina directly</h3>
+              <p>Tap the Messenger button and send the ready-to-use inquiry.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-number">03</span>
+              <h3>Keep it personal and local</h3>
+              <p>Pickup, delivery, cash, or Venmo can be handled directly without a checkout maze.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section final-section">
+        <div class="container final-card">
+          <div>
+            <p class="kicker kicker-light">The Collected Edit</p>
+            <h2>Elegant finds. Local ease. Better choices, quietly made.</h2>
+          </div>
+          <div class="final-actions">
+            <a href="#collection" class="button button-light">View the collection</a>
+            <button id="footerMessenger" class="button button-outline" type="button">Open Messenger</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal hidden" id="productModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close listing">×</button>
+      <div class="modal-layout">
+        <div class="modal-image-wrap">
+          <img id="modalImage" src="" alt="" />
+        </div>
+        <div class="modal-copy">
+          <p class="modal-kicker" id="modalCategory"></p>
+          <h3 id="modalTitle"></h3>
+          <div class="modal-meta-row">
+            <span class="price" id="modalPrice"></span>
+            <span class="condition" id="modalCondition"></span>
+          </div>
+          <p id="modalDescription" class="modal-description"></p>
+          <div id="modalTags" class="tag-row"></div>
+          <div id="modalCircular" class="circular-note"></div>
+          <div class="modal-actions">
+            <button id="modalMessenger" class="button button-dark" type="button">Message Trina on Facebook</button>
+            <button id="modalCopy" class="button button-light" type="button">Copy item message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script src="inventory-data.js"></script>
+  <script src="shared.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

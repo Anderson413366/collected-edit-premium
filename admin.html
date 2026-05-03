@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Collected Edit Studio</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="studio-body">
+  <main class="studio-shell">
+    <section id="loginView" class="studio-login card-surface">
+      <p class="kicker">Local Studio</p>
+      <h1>Prototype editing for this browser.</h1>
+      <p class="studio-subtext">This is not a production admin system. It only updates local browser storage for previewing listings, copy, and Messenger settings before the collection is moved to a real backend.</p>
+      <div class="hero-actions">
+        <button id="loginButton" class="button button-dark" type="button">Open local Studio</button>
+      </div>
+      <p class="helper-text">For shared inventory editing, connect Supabase or another protected backend before launch.</p>
+    </section>
+
+    <section id="studioView" class="hidden">
+      <div class="studio-topbar">
+        <div>
+          <p class="kicker">The Collected Edit Studio</p>
+          <h1>Collection control</h1>
+          <p>Touch-friendly listing management for desktop or iPhone. Changes stay in this browser until a real backend is connected.</p>
+        </div>
+        <div class="hero-actions">
+          <button id="exportButton" class="button button-light" type="button">Export JSON</button>
+          <label class="button button-light file-button">
+            Import JSON
+            <input id="importFile" type="file" accept="application/json" hidden />
+          </label>
+        </div>
+      </div>
+
+      <div class="studio-grid">
+        <section class="card-surface studio-panel">
+          <div class="panel-block">
+            <p class="panel-label">Site settings</p>
+            <label class="form-field">
+              <span>Facebook Messenger page URL</span>
+              <input id="settingMessenger" type="url" placeholder="https://m.me/YourPageName" />
+            </label>
+            <label class="form-field">
+              <span>Service area</span>
+              <input id="settingArea" type="text" />
+            </label>
+            <label class="form-field">
+              <span>Hero description</span>
+              <textarea id="settingHero"></textarea>
+            </label>
+            <label class="form-field">
+              <span>Brand story</span>
+              <textarea id="settingStory"></textarea>
+            </label>
+            <label class="form-field">
+              <span>Recycle Company note</span>
+              <textarea id="settingRecycle"></textarea>
+            </label>
+            <button id="saveSettings" class="button button-dark" type="button">Save settings</button>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="panel-block">
+            <p class="panel-label">Listing editor</p>
+            <label class="form-field">
+              <span>Upload image</span>
+              <input id="itemImageUpload" type="file" accept="image/*" />
+            </label>
+            <label class="form-field">
+              <span>Title</span>
+              <input id="itemTitle" type="text" placeholder="Ivory porcelain ginger jar" />
+            </label>
+            <div class="field-grid two-up">
+              <label class="form-field">
+                <span>Category</span>
+                <input id="itemCategory" type="text" placeholder="Home Decor" />
+              </label>
+              <label class="form-field">
+                <span>Price</span>
+                <input id="itemPrice" type="text" placeholder="$72" />
+              </label>
+            </div>
+            <div class="field-grid two-up">
+              <label class="form-field">
+                <span>Condition</span>
+                <input id="itemCondition" type="text" placeholder="Excellent vintage condition" />
+              </label>
+              <label class="form-field">
+                <span>Status</span>
+                <select id="itemStatus">
+                  <option value="available">Available</option>
+                  <option value="sold_badge">Sold badge</option>
+                  <option value="archive">Sold archive</option>
+                </select>
+              </label>
+            </div>
+            <label class="form-field">
+              <span>Tags</span>
+              <input id="itemTags" type="text" placeholder="porcelain, neutral, entertaining" />
+            </label>
+            <label class="form-field">
+              <span>Description</span>
+              <textarea id="itemDescription"></textarea>
+            </label>
+            <label class="form-field">
+              <span>Quiet sustainability note</span>
+              <textarea id="itemCircular"></textarea>
+            </label>
+            <div class="hero-actions">
+              <button id="generateButton" class="button button-light" type="button">Generate draft</button>
+              <button id="saveItemButton" class="button button-dark" type="button">Save listing</button>
+              <button id="resetItemButton" class="button button-light" type="button">Reset form</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="card-surface studio-panel">
+          <div class="panel-block">
+            <div class="inventory-head">
+              <div>
+                <p class="panel-label">Inventory</p>
+                <h2>Current listings</h2>
+              </div>
+            </div>
+            <div id="itemList" class="item-list"></div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="inventory-data.js"></script>
+  <script src="shared.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

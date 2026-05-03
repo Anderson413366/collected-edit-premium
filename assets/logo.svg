@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 76" fill="none">
+  <rect width="240" height="76" rx="24" fill="#FAF7F1"/>
+  <path d="M45 22L52.8 31.3L61.6 22L69.7 31.3L78 22L77 42H46L45 22Z" stroke="#8F7554" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M52 45H71" stroke="#8F7554" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="92" y="34" fill="#1E1B18" font-size="18" font-family="Georgia, Times New Roman, serif">The Collected</text>
+  <text x="92" y="56" fill="#7D6E61" font-size="18" font-family="Georgia, Times New Roman, serif">Edit</text>
+</svg>

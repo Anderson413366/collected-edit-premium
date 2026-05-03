@@ -1,0 +1,20 @@
+{
+  "name": "collected-edit-premium",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static storefront for The Collected Edit with local prototype Studio tools.",
+  "scripts": {
+    "check:js": "node --check shared.js && node --check inventory-data.js && node --check app.js && node --check admin.js && node --check scripts/verify-static-site.mjs",
+    "check:static": "node scripts/verify-static-site.mjs",
+    "verify": "npm run check:js && npm run check:static",
+    "build": "npm run verify",
+    "smoke:browser": "playwright test scripts/browser-smoke.spec.mjs --reporter=line",
+    "serve": "python3 -m http.server 5173"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1"
+  }
+}

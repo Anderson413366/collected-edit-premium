@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="0" x2="760" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2EBDD"/>
+      <stop offset="1" stop-color="#D8C3A6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(220 180) rotate(40) scale(480 360)">
+      <stop stop-color="#FFFDF9" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#FFFDF9" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#231D18" flood-opacity=".14"/>
+    </filter>
+  </defs>
+  <rect width="900" height="900" rx="64" fill="url(#bg)"/>
+  <rect width="900" height="900" rx="64" fill="url(#glow)"/>
+  <rect x="72" y="72" width="756" height="756" rx="48" stroke="#FFFFFF" stroke-opacity=".48"/>
+  
+      <ellipse cx="450" cy="676" rx="210" ry="40" fill="#1F1B18" fill-opacity=".11"/>
+      <g filter="url(#shadow)">
+        <rect x="316" y="494" width="90" height="54" rx="18" fill="#B38E58"/>
+        <rect x="494" y="512" width="90" height="54" rx="18" fill="#B38E58"/>
+        <rect x="350" y="292" width="22" height="212" rx="11" fill="#B88F57"/>
+        <rect x="528" y="244" width="22" height="260" rx="11" fill="#B88F57"/>
+        <rect x="342" y="232" width="38" height="82" rx="16" fill="#FBF7F1"/>
+        <rect x="520" y="184" width="38" height="82" rx="16" fill="#FBF7F1"/>
+        <path d="M361 196C375 214 375 232 361 246C347 232 347 214 361 196Z" fill="#F2C56A"/>
+        <path d="M539 148C553 166 553 184 539 198C525 184 525 166 539 148Z" fill="#F2C56A"/>
+      </g>
+    
+  <text x="88" y="836" fill="#5D5146" font-size="34" font-family="Georgia, serif">Brass candle pair</text>
+</svg>
