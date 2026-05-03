@@ -2,16 +2,12 @@
 
 ## App identity
 
-- App name: `collected-edit-premium`
+- App name: `The Collected Edit`
 - App slug: `collected-edit-premium`
+- Repository: `https://github.com/Anderson413366/collected-edit-premium`
+- Production URL: `https://collected-edit-premium.vercel.app`
 
 ## Local setup
-
-Prerequisites:
-
-- Node.js 20 or newer
-- npm
-- Python 3 (optional local static server)
 
 ```bash
 npm install
@@ -19,68 +15,53 @@ npm run verify
 npm run serve
 ```
 
-Open `http://127.0.0.1:5173` for the storefront and `/admin.html` for the prototype Studio.
+Open:
 
-## GitHub preparation
+- `http://127.0.0.1:5173` (public storefront)
+- `http://127.0.0.1:5173/admin.html` (local Studio prototype)
 
-Recommended repo name: `collected-edit-premium`
+## GitHub
 
-Commit these production files:
+Recommended repo name: `collected-edit-premium`.
 
-- `index.html`, `admin.html`, `styles.css`
-- `shared.js`, `app.js`, `admin.js`, `inventory-data.js`
-- `assets/`
-- `.gitignore`, `.env.example`, `package.json`, `package-lock.json`
-- `vercel.json`, `netlify.toml`
-- `README.md`, `docs/`
-- `scripts/`
+Commit production files only and avoid secrets:
 
-Never commit:
+- Core app: `index.html`, `admin.html`, `styles.css`
+- Runtime: `shared.js`, `app.js`, `admin.js`, `inventory-data.js`
+- Config: `.gitignore`, `.env.example`, `package.json`, `package-lock.json`, `vercel.json`, `netlify.toml`
+- Docs: `README.md`, `docs/*`
+- Verification: `scripts/*`
+- Assets: `assets/`
 
-- `.env`
-- `.env.local`
-- `.env.production`
-- `node_modules/`
-- `.vscode/` (except user-level settings)
-- secrets or service credentials
+## Vercel setup
 
-## Platform choice
+1. Create/import GitHub repo in Vercel.
+2. Select framework preset `Other`.
+3. Set install command `npm install`.
+4. Set build command `npm run verify`.
+5. Set output directory `.`.
+6. Keep environment variables empty for this release.
+7. Deploy and verify:
+   - `https://collected-edit-premium.vercel.app`
+   - `https://collected-edit-premium.vercel.app/admin`
+   - `https://collected-edit-premium.vercel.app/studio`
 
-Primary recommendation: Vercel
+### Route mapping details
 
-Why:
+- Vercel now uses 302 redirects for compatibility:
+  - `/admin` → `/admin.html`
+  - `/studio` → `/admin.html`
 
-- Clean static deployment on `collected-edit-premium`
-- Existing rewrite/header config already matches storefront and Studio routes
-- Easy production verification for security headers and health flow
+## Netlify setup
 
-Secondary option: Netlify static hosting
+1. Set publish directory `.`
+2. Set build command `npm run verify`
+3. Use `netlify.toml` redirects for `/admin` and `/studio`.
 
-## Vercel configuration
+## Post-deploy checks
 
-1. Create/connect GitHub repo in Vercel.
-2. Framework preset: `Other`.
-3. Install command: `npm install`.
-4. Build command: `npm run verify`.
-5. Output directory: `.`.
-6. Keep environment variables empty for now (no active backend).
-7. Deploy.
-
-## Netlify configuration
-
-1. Create/connect GitHub repo in Netlify.
-2. Set publish directory: `.`
-3. Set build command: `npm run verify`.
-4. Keep `netlify.toml` in place.
-
-## Post-deploy verification
-
-- Homepage loads
-- Listing grid and filters work
-- Product modal opens/closes
-- Archive toggle works
-- `admin.html` is labeled prototype-only
-- Messenger URL behavior handles missing/invalid values
-- `Content-Security-Policy` and related security headers are present
-- No secrets are in repo artifacts
-- Production URL responds over HTTPS
+- Homepage and product interactions are functional.
+- Security headers are present in responses.
+- `/admin` and `/studio` route to Studio.
+- No committed secrets.
+- Production checks are currently implemented in `.github`/repo docs and verified with `npm run verify` and remote `curl` checks.

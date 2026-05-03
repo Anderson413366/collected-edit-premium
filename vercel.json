@@ -5,14 +5,16 @@
   "installCommand": "npm install",
   "buildCommand": "npm run verify",
   "outputDirectory": ".",
-  "rewrites": [
+  "redirects": [
     {
       "source": "/admin",
-      "destination": "/admin.html"
+      "destination": "/admin.html",
+      "permanent": false
     },
     {
       "source": "/studio",
-      "destination": "/admin.html"
+      "destination": "/admin.html",
+      "permanent": false
     }
   ],
   "headers": [

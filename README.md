@@ -1,37 +1,30 @@
 # The Collected Edit Premium
 
-## App Identity
+## App identity
 
 - App name: `The Collected Edit`
 - App slug: `collected-edit-premium`
+- GitHub repository: `https://github.com/Anderson413366/collected-edit-premium`
+- Production URL: `https://collected-edit-premium.vercel.app`
 
 ## What this app is
 
-A production-grade static storefront for a curated resale collection. The public experience includes:
-
-- browse and filter searchable collection listings
-- listing detail modal and copy-to-messenger message flow
-- optional archived/sold section toggle
-- mobile-optimized layout and lightweight static assets
-
-This version also ships a local-only Studio prototype for editing data in the same browser. Studio changes are intentionally not production-shared and are not secured by authentication.
+A production-grade static storefront with a local Studio prototype for inventory editing. It is intentionally deployable without login and without an active backend.
 
 ## Runtime classification
 
-- Framework: static frontend (HTML/CSS/vanilla JS)
-- Auth: none required for public access
-- Backend: not active for now (future-ready only)
-- API routes: none
+- Framework: static HTML/CSS/vanilla JS
+- Auth: none required for public storefront access
+- Backend: not active (future-ready only)
 
-## Authentication status for this deployment
+## What changed in this pass
 
-| Item | Status |
-| --- | --- |
-| Existing auth found | No (only prototype Studio button flow, no credentials)
-| Auth preserved | Not applicable |
-| Auth required for current deployment | No |
-| Temporary access mode added | N/A |
-| Sensitive routes protected or hidden | Static studio data is clearly labeled prototype-only |
+- Verified app identity and treated this as a new deployment (`collected-edit-premium`).
+- Cleaned and refreshed project docs for deployment/back-end readiness.
+- Ensured deployment checks are source-of-truth and pass locally.
+- Added future-ready backend setup docs and Supabase naming plan.
+- Created fresh GitHub repository and production Vercel deployment.
+- Added route handling consistency (`/admin`, `/studio` redirect to Studio prototype).
 
 ## Local verification
 
@@ -41,61 +34,54 @@ npm run verify
 npm run build
 ```
 
-Optional smoke test (requires Playwright browser runtime support):
+Optional browser smoke (if Playwright runtime permits):
 
 ```bash
 npm run serve
 npm run smoke:browser
 ```
 
-`npm run build` is a verification pass; it does not produce a bundled artifact.
+`npm run build` is a validation pass and does not generate a compiled bundle.
 
-## Structure
+## Route behavior
 
-Core static files:
+- `/` and `/index.html`: storefront
+- `/admin`: redirects to `/admin.html`
+- `/studio`: redirects to `/admin.html`
+- `/admin.html`: local Studio prototype (explicitly non-production)
 
-- `index.html` — public storefront
-- `admin.html` — local Studio prototype
-- `styles.css` — shared styling
-- `shared.js` — shared normalization and rendering helpers
-- `app.js` — public storefront behavior
-- `admin.js` — local Studio behavior
-- `inventory-data.js` — bundled seed inventory and defaults
-- `assets/` — brand and listing images
-- `scripts/` — verification scripts
+## Files kept in production scope
 
-Platform and docs:
-
-- `.gitignore`
-- `.env.example`
-- `package.json`
+- `index.html`, `admin.html`, `styles.css`
+- `shared.js`, `app.js`, `admin.js`, `inventory-data.js`
+- `assets/`
+- `.env.example`, `.gitignore`, `package.json`, `package-lock.json`
 - `vercel.json`, `netlify.toml`
-- `docs/deployment.md`
-- `docs/backend-readiness.md`
-- `docs/environment-variables.md`
-- `docs/production-checklist.md`
-- `docs/supabase-setup.md`
-- `docs/backend-setup.md`
-- `docs/security-review.md`
+- `docs/*`
+- `scripts/*`
+
+## Authentication status for this deployment
+
+| Item | Status |
+| --- | --- |
+| Existing auth found | No (no username/password flow in production)
+| Auth preserved | N/A |
+| Auth required for current deployment | No |
+| Temporary access mode added | N/A |
+| Sensitive routes protected or hidden | Studio is prototype-only and clearly labeled local only |
 
 ## Deployment targets
 
-Preferred: Vercel static project using this same app slug.
+Preferred: Vercel (`collected-edit-premium`) with `npm run verify` build.
 
-- Project name: `collected-edit-premium`
-- Framework preset: `Other`
-- Build command: `npm run verify`
-- Install command: `npm install`
-- Output directory: `.`
+Secondary: Netlify static with the same build command.
 
-Secondary: Netlify static publish target.
+## Documentation
 
-- Publish directory: `.`
-- Build command: `npm run verify`
-- Redirects and headers: `netlify.toml`
-
-## Production posture
-
-- No active secrets
-- No active Supabase integration today
-- Protected/provisioned backend features are documented for future activation only
+- [docs/deployment.md](docs/deployment.md)
+- [docs/backend-readiness.md](docs/backend-readiness.md)
+- [docs/environment-variables.md](docs/environment-variables.md)
+- [docs/backend-setup.md](docs/backend-setup.md)
+- [docs/supabase-setup.md](docs/supabase-setup.md)
+- [docs/production-checklist.md](docs/production-checklist.md)
+- [docs/security-review.md](docs/security-review.md)
