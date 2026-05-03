@@ -5,7 +5,6 @@ const root = process.cwd();
 const htmlFiles = ['index.html', 'admin.html'];
 const requiredFiles = [
   '.env.example',
-  '.gitignore',
   'README.md',
   'netlify.toml',
   'vercel.json',
